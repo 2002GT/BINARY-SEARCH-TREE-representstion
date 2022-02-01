@@ -1,0 +1,58 @@
+  //   -----BINARY SEARCH TREE-----------------
+#include "bits/stdc++.h"
+using namespace std;
+
+ struct Node{
+     int data;
+     Node* left ;
+     Node* right;
+     
+     Node (int val){
+         data = val;
+         left = NULL;
+         right = NULL;
+     }
+ };
+
+ Node* intset_BST(Node*root , int val){
+     if(root == NULL){
+         return new Node(val);
+     }
+     
+     if(val<root->data){
+         root->left = intset_BST(root->left,val);
+     }
+     else{
+     root->right = intset_BST(root->right,val);
+     }
+     return root;
+ }
+ 
+//   INORDER FUN--------------------
+  
+   void inorder(Node*root){
+       if(root== NULL)
+       return;
+       inorder(root->left);
+       cout<<root->data<<" ";
+       inorder(root->right);
+   }
+
+
+int main()
+{
+ Node *root = NULL;
+ root = intset_BST(root , 5);
+ intset_BST(root , 1);
+ intset_BST(root , 3);
+ intset_BST(root , 4);
+ intset_BST(root , 2);
+ intset_BST(root , 7);
+ 
+  inorder(root);
+  cout<<endl;
+  
+
+    return 0;
+}
+
