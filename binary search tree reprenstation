@@ -10,22 +10,29 @@ using namespace std;
      Node (int val){
          data = val;
          left = NULL;
+         
          right = NULL;
      }
+ 
  };
 
  Node* intset_BST(Node*root , int val){
      if(root == NULL){
+     
          return new Node(val);
      }
      
-     if(val<root->data){
+     if(val<root->data)
+     {
          root->left = intset_BST(root->left,val);
      }
-     else{
+     else
+     {
      root->right = intset_BST(root->right,val);
      }
      return root;
+     
+     
  }
  
 //   INORDER FUN--------------------
