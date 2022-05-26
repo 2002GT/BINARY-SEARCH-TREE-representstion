@@ -38,7 +38,9 @@ using namespace std;
 //   INORDER FUN--------------------
   
    void inorder(Node*root){
+   
        if(root== NULL)
+       
        return;
        inorder(root->left);
        cout<<root->data<<" ";
@@ -50,7 +52,9 @@ int main()
 {
  Node *root = NULL;
  root = intset_BST(root , 5);
+ 
  intset_BST(root , 1);
+ 
  intset_BST(root , 3);
  intset_BST(root , 4);
  intset_BST(root , 2);
